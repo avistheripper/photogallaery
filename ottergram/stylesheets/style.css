@@ -1,0 +1,123 @@
+html, body{
+	height: 100%;
+}
+*{
+	font-family: 'Fascinate Inline', cursive;
+}
+
+body{
+	display: flex;
+	flex-direction: column;
+	font-size: 10px;
+	background: rgba(11, 31, 60, 0.63);
+	transition: top 1s ease-out 0.5s;}
+
+body > ul{
+	list-style-type: none;
+}
+.main-header{
+	flex:01 auto;
+}
+.main-content{
+	display: flex;
+	flex-direction: column;
+	flex: 11 auto;
+}
+.thumbnail-title{
+	display: block;
+	margin: 0;
+	padding: 4px 10px;
+	background: rgb(96, 125, 139);
+	color: rgb(202, 238, 255);
+	font-size: 18px;
+}
+a{
+	text-decoration:none;
+}
+.thumbnail-image{
+	width: 100%;
+}
+.thumbnail-item{
+	transition: all 0.3s ease-out;
+	display: inline-block;
+	min-width: 120px;
+	max-width: 120px;
+	border: 1px solid rgb(100%, 100%, 100%);
+	border: 1px solid rgba(100%, 100%, 100%, 0.8);
+}
+
+.logo-text{
+	background: white;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 37px;
+}
+.detail-image{
+	width: 90%;
+}
+.thumbnail-list{
+	display: flex;
+	order:2;
+	flex:01 auto; 
+	padding: 20px 0;
+	white-space: nowrap;
+	overflow-x: auto;
+	justify-content: space-between;
+}
+.detail-image-container{
+	flex:11 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.detail-image-title{
+	color: white;
+	font-size: 40px;
+	text-shadow: rgba(0, 0, 0, 0.9) 1px 2px 9px;
+	font-family: 'Pacifico', cursive!important;
+	position: absolute;
+	bottom: -17px;
+	left: 1px;
+	}
+.detail-image-frame{
+	text-align: center;
+	position: relative;
+	transition: transform 333ms;
+}
+.is-tiny{
+	transform: scale(0.001);
+	transition: transform 0ms;
+}
+.hidden-detail .detail-image-container {
+	display: none;
+}
+.hidden-detail .thumbnail-list{
+	flex-direction: column;
+	align-items: center;
+}
+.hidden-detail .thumbnail-item{
+	max-width: 80%;
+}
+
+@media all and (min-width: 768px) {
+	.main-content{
+		flex-direction: row;
+		overflow: hidden;
+	}
+	.thumbnail-list{
+		flex-direction: column;
+		order: 0;
+		margin-left: 20px;
+	}
+	.thumbnail-item{
+		max-width: 260px;
+	}
+	.thumbnail-item + .thumbnail-item{
+		margin-top: 20px;
+	}
+
+}
+.thumbnail-item:hover{
+	transform: scale(0.9);
+	box-shadow: 0 0 15px #f6f6f6;
+}
